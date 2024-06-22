@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EJS</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+
+    <%- include('header.ejs') %>
+    <div>
+        <form action="/greet" method="post">
+            First Name: <input name="firstName" type="text" />
+
+            Last Name: <input name="lastName" type="text" />
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+
+        <% if (locals.firstName && locals.lastName) { %>
+            <h2>Hello, <%= firstName %>
+                    <%= lastName %>
+            </h2>
+            <img src="images/greet.gif" alt="greetImgage">
+            <% } %>
+
+
+    <%- include('footer.ejs') %>
+</body>
+
+</html>
